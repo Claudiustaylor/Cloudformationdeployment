@@ -291,7 +291,7 @@ Resources:
           cd /var/www/html
           
       ImageId: ami-005bdb005fb00e791
-      KeyName: 
+      KeyName: hawebapp
       IamInstanceProfile: !Ref ProfileWithRolesForOurApp
       SecurityGroups:
         - Ref: WebServerSecGroup
