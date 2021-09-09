@@ -289,10 +289,9 @@ Resources:
           apt-get install apache2 -y
           systemctl start apache2.service
           cd /var/www/html
-          aws s3 cp s3://udacity-demo-1/udacity.zip .
-          unzip -o udacity.zip
-      ImageId: ami-031e556ebe95c007e
-      KeyName: UdacityLondonKP
+          
+      ImageId: ami-005bdb005fb00e791
+      KeyName: 
       IamInstanceProfile: !Ref ProfileWithRolesForOurApp
       SecurityGroups:
         - Ref: WebServerSecGroup
