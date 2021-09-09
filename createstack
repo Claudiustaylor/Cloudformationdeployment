@@ -1,4 +1,4 @@
-aws cloudformation create-stack  --stack-name webAppLab --region us-east-1 --template-body file://hawebapp.yml
+aws cloudformation create-stack  --stack-name webAppLab --region us-east-1 --template-body file://server.yml
 
 
 #.sh
