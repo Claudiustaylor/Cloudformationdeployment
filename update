@@ -1,4 +1,4 @@
-aws cloudformation update-stack  --stack-name myFirstTest --region us-east-1 --template-body file://server.yml
+aws cloudformation update-stack  --stack-name webAppLab --region us-east-1 --template-body file://server.yml
 
 
 #.sh
