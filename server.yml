@@ -6,44 +6,39 @@ Parameters:
     Type: String
 
   VpcCIDR:
-    Description: Please enter the IP range (CIDR notation) for this
+    Description: (CIDR notation) for VPC
     Type: String
     Default: 10.0.0.0/16
 
   PublicSubnet1CIDR:
-    Description: Please enter the IP range (CIDR notation) for the Subnet
+    Description:  (CIDR notation) for the first Subnet
     Type: String
     Default: 10.0.0.0/24
 
   PublicSubnet2CIDR:
-    Description: Please enter the IP range (CIDR notation) for the Subnet
+    Description: (CIDR notation) for the second Subnet
     Type: String
     Default: 10.0.1.0/24
 
   PrivateSubnet1CIDR:
-    Description: Please enter the IP range (CIDR notation) for the Subnet
+    Description: (CIDR notation) for the first Subnet
     Type: String
     Default: 10.0.2.0/24
 
   PrivateSubnet2CIDR:
-    Description: Please enter the IP range (CIDR notation) for the Subnet
+    Description: (CIDR notation) for the second Subnet
     Type: String
     Default: 10.0.3.0/24
 
   InstanceType:
-    Description: "The EC2 instance type of general purpose"
+    Description: "The EC2 instance"
     Type: String
     AllowedValues:
       [
-        t2.medium,
-        t3.small,
-        t3.nano,
-        t3.micro,
+       
         t3.small,
         t3.medium,
-        t3.large,
-        t3.xlarge,
-        t3.2xlarge,
+    
       ]
 
 Resources:
@@ -358,28 +353,3 @@ Resources:
           Values: [/]
       ListenerArn: !Ref "Listener"
       Priority: 1
-
-Outputs:
-  VPC:
-    Description: A reference to the created VPC
-    Value: !Ref VPC
-    Export:
-      Name: !Sub ${EnvironmentName}-VPCID
-
-  PublicSubnets:
-    Description: A list of the public subnets
-    Value: !Join [",", [!Ref PublicSubnet1, !Ref PublicSubnet2]]
-    Export:
-      Name: !Sub ${EnvironmentName}-PUB-NETS
-
-  PrivateSubnets:
-    Description: A list of the private subnets
-    Value: !Join [",", [!Ref PrivateSubnet1, !Ref PrivateSubnet2]]
-    Export:
-      Name: !Sub ${EnvironmentName}-PRIV-NETS
-
-  WebAppLoadBalancerDNSName:
-    Description: DNS name or Public URL of the Load Balancer
-    Value: !Join ["", ["http://", !GetAtt WebAppLB.DNSName]]
-    Export:
-      Name: !Sub ${EnvironmentName}-LB-DNSName
