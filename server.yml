@@ -48,7 +48,6 @@ Resources:
       CidrBlock: !Ref VpcCIDR
       EnableDnsHostnames: true
       Tags:
-        - Key: Name
           Value: !Ref EnvironmentName
 
   PrivateSubnet1:
@@ -59,7 +58,6 @@ Resources:
       CidrBlock: !Ref PrivateSubnet1CIDR
       MapPublicIpOnLaunch: false
       Tags:
-        - Key: Name
           Value: !Sub ${EnvironmentName} Private Subnet (AZ1)
 
   PrivateSubnet2:
@@ -70,7 +68,6 @@ Resources:
       CidrBlock: !Ref PrivateSubnet2CIDR
       MapPublicIpOnLaunch: false
       Tags:
-        - Key: Name
           Value: !Sub ${EnvironmentName} Private Subnet (AZ2)
 
   PublicSubnet1:
@@ -81,7 +78,6 @@ Resources:
       CidrBlock: !Ref PublicSubnet1CIDR
       MapPublicIpOnLaunch: false
       Tags:
-        - Key: Name
           Value: !Sub ${EnvironmentName} Public Subnet (AZ1)
 
   PublicSubnet2:
@@ -92,7 +88,6 @@ Resources:
       CidrBlock: !Ref PublicSubnet2CIDR
       MapPublicIpOnLaunch: false
       Tags:
-        - Key: Name
           Value: !Sub ${EnvironmentName} Public Subnet (AZ2)
 
   InternetGateway:
@@ -133,7 +128,6 @@ Resources:
     Properties:
       VpcId: !Ref VPC
       Tags:
-        - Key: Name
           Value: !Sub ${EnvironmentName} Public Routes
 
   DefaultPublicRoute:
@@ -161,7 +155,6 @@ Resources:
     Properties:
       VpcId: !Ref VPC
       Tags:
-        - Key: Name
           Value: !Sub ${EnvironmentName} Private Routes (AZ1)
 
   DefaultPrivateRoute1:
@@ -182,7 +175,6 @@ Resources:
     Properties:
       VpcId: !Ref VPC
       Tags:
-        - Key: Name
           Value: !Sub ${EnvironmentName} Private Routes (AZ2)
 
   DefaultPrivateRoute2:
